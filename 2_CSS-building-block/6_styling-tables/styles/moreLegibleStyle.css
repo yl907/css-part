@@ -1,0 +1,75 @@
+/* 
+
+
+
+
+
+
+*/
+
+table{
+    border-collapse: collapse;
+    /* table-layout: fixed; */
+    /* width: 100%; */
+}
+/* table thead th:nth-child(1) {
+    width: 15%;
+}
+table thead th:nth-child(2) {
+    width: 15%;
+}
+table thead th:nth-child(3) {
+    width: 15%;
+}
+table thead th:nth-child(4) {
+    width: 15%;
+} */
+
+/* 1.Add padding of 0.3em to the table headings and data and align them at the top of their cells. */
+table th, table td{
+    padding: 0.3em;
+    text-align: top;
+}
+
+/* 2.Align headings and data for columns containing numbers right. */
+/* WARNING!!! a valuable experience which is actually a mistake, we can't style every table data by choosing a <col>, so still use the :nth-child() is the right way. */
+/* col[id="Year formed"], col[id="No. of Albums"] {
+    text-align: right;
+} */
+
+table[id="uk-punk-bands"] td:nth-child(2), 
+table[id="uk-punk-bands"] td:nth-child(3) { 
+    /*so, the nth-child() means which order the child is, but not limited to its own type. for example, if the first child of <tr> is <th>, 
+    and the second child of <tr> is <td id="second-child, first-td">, the third child of <tr> is <td id="third-child, second-td">, 
+    then if you want to select the <td id="second-child, first-td">, you need use this selector "tr td:nth-child(2)"*/
+    text-align: right;
+}
+
+/* 3.Align headings and data for columns containing text left. */
+table[id="uk-punk-bands"] td:nth-child(4), 
+table[id="uk-punk-bands"] th[scope="row"],
+table[id="uk-punk-bands"] th[scope="col"] {
+    text-align: left;
+    /* background-color: aqua; -- use this to test which section we are apply our style on. */
+}
+
+/* 4.Add a 1px top and bottom solid border with the hex color #999, plus a 1px solid border of the same color above the footer. */
+table{
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+}
+table tfoot{
+    border-top: 1px solid #999;
+}
+
+/* 5.Remove the default spacing between the table elements borders to get the expected result. */
+th,
+td {
+    padding: 0px;  
+}
+
+/* 6.Stripe every odd row of the main table with the hex color #eee.  */
+table tbody tr:nth-child(odd) {
+    background-color: #eee;
+}
+

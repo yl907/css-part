@@ -1,0 +1,35 @@
+/* Descendant combinator
+The descendant combinator — typically represented by a single space (" ") character — combines two selectors such that elements matched by the second selector are selected if they have an ancestor (parent, parent's parent, parent's parent's parent, etc.) element matching the first selector. */
+.box p {
+    color: red;
+}  
+
+/* Child combinator(direct children)
+The child combinator (>) is placed between two CSS selectors. It matches only those elements matched by the second selector that are the direct children of elements matched by the first. */
+ul > li {
+    border-top: 5px solid red;
+}  
+
+/* Adjacent sibling combinator
+The adjacent sibling selector (+) is placed between two CSS selectors. It matches only those elements matched by the second selector that are the next sibling element of the first selector. 
+For example, to select all <p> elements that are immediately preceded by a <h1> element: */
+h1 + p {
+    font-weight: bold;
+    background-color: #333;
+    color: #fff;
+    padding: .5em;
+}   
+
+/* General sibling combinator
+If you want to select siblings of an element even if they are not directly adjacent, then you can use the general sibling combinator (~).  */
+h1 ~ p {
+    font-weight: bold;
+    background-color: #333;
+    color: #fff;
+    padding: .5em;
+}
+
+/* Using multiple combinators */
+ul > li[class="a"] {
+    font-size:100px;
+}

@@ -1,0 +1,11 @@
+/* blocks */
+.form { }
+/* different version(modifier) of blocks */
+.form--theme-xmas { }
+.form--simple { }
+
+/* element */
+.form__input { }
+.form__submit { }
+/* different version(modifier) of element */
+.form__submit--disabled { }

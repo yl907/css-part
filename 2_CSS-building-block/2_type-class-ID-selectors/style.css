@@ -1,0 +1,44 @@
+/* 1 Using the universal selector to make your selectors easier to read */
+article :first-child {
+    font-weight: bold;  
+}
+/* 
+    However, this selector could be confused with article:first-child, which will select any <article> element that is the first child of another element.
+    To avoid this confusion, we can add the universal selector to the :first-child pseudo-class, so it is more obvious what the selector is doing. It is selecting any element which is the first-child of an <article> element, or the first-child of any descendant element of <article>: 
+*/
+article *:first-child {
+    font-weight: bold;
+}
+/* Although both do the same thing, the readability is significantly improved. */
+
+
+/* 2 Class selectors */
+.highlight {
+    background-color: yellow;
+}
+
+/* 3 Target an element if it has more than one class applied */
+/* You can apply multiple classes to an element and target them individually, or only select the element when all of the classes in the selector are present. This can be helpful when building up components that can be combined in different ways on your site. */
+.notebox {
+    border: 4px solid #666;
+    padding: .5em;
+}
+.notebox.warning {
+    border-color: orange;
+    font-weight: bold;
+}
+.notebox.danger {
+    border-color: red;
+    font-weight: bold;
+}
+
+/* 4 ID selectors */
+/* However, an ID can be used only once per page, and elements can only have a single id value applied to them. */
+/* It can select an element that has the id set on it, and you can precede the ID with a type selector to only target the element if both the element and ID match. You can see both of these uses in the following example: */
+#one {
+    background-color: yellow;
+}
+
+h1#heading {
+    color: rebeccapurple;
+}
