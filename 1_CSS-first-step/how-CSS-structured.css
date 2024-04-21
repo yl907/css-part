@@ -1,0 +1,91 @@
+/* think about block in HTML, with or without a text is ok. */
+.box0 {
+    margin: 30px;
+    width: 100px;
+    height: 100px;
+    background-color: rebeccapurple;
+    transform: rotate(0.8turn);
+  }
+  
+  .box1 {
+    margin: 30px;
+    width: 300px; /* changed */
+    height: 100px;
+    background-color: rebeccapurple;
+    transform: rotate(0.8turn);
+  }
+      
+  .box2 {
+    margin: 30px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(51, 92, 153);
+    transform: rotate(0.8turn);
+  }
+  
+  .box3 {
+    margin: 120px; /* changed */
+    width: 100px;
+    height: 100px;
+    background-color: rgb(51, 92, 153);
+    transform: rotate(0.8turn);
+  }
+  
+  p.my_p {
+    font-size: 12px;
+    /* The width CSS property sets an element's width. By default, 
+    it sets the width of the content area, but if box-sizing is set to border-box, 
+    it sets the width of the border area. */
+    /* content, padding, border, margin. See how-are-margins-borders-padding-and-content-related-01.png in this directory. */
+    width: 150px;
+    /* use background to see the area of content, you will find the content is static no matter the length of text.  */
+    /* HSLA: Hue颜色, Saturation, and Lightness, Alpha channel - which specifies the opacity for a color. */
+    background-color: hsla(178, 84%, 38%, 0.831);
+    color: rgb(0, 0, 0);
+    /* This property(border) is a shorthand for the following CSS properties: 
+    border-color
+    border-style
+    border-width*/
+    border: 2px solid black
+  }
+  
+  p.goldie {
+    background: gold;
+  }
+
+  /* 好看捏 */
+  .exampleone {
+    background-color: transparent;
+  }
+  
+  .exampletwo {
+    background-color: rgb(153, 102, 153);
+    color: rgb(255, 255, 204);
+  }
+  
+  .examplethree {
+    background-color: #777799;
+    color: #ffffff;
+  }
+
+  /* the calc() function */
+  div.outer {
+    border: 5px solid black;
+  }
+  
+  div.box {
+    /* you can change the value of each property to see what happen. */
+    padding: 10px;
+    width: calc(90% - 30px);
+    background-color: rebeccapurple;
+    color: white;
+  }
+
+  /* you can use new CSS as an enhancement, 
+  knowing that no error will occur if it is not understood — the browser will either get the new feature or not. 
+  This enables basic fallback styling. */
+  .fallbackbox {
+    width: 500px;
+    width: calc(100% - 50px);
+  }
+  
