@@ -1,0 +1,45 @@
+/* about links: 
+This order is important because link styles build on one another. For example, 
+the styles in the first rule will apply to all the subsequent ones. When a link is activated, 
+it's usually also hovered over. If you put these in the wrong order, 
+and you're changing the same properties in each ruleset, things won't work as you expect. 
+To remember the order, you could try using a mnemonic like LoVe Fears HAte.*/
+
+
+a {
+    outline: none;
+}
+  
+a:link,
+a:visited {
+    color: #8cb4ff;
+}
+  
+a:focus {
+    text-decoration: none;
+}
+  
+a:hover {
+    text-decoration: none;
+}
+  
+a:active {
+    text-shadow: 1px 1px 4px #485d83; 
+}
+
+/* LoVe Fear HAte */
+body {
+    width: 300px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+}
+  
+  p {
+    line-height: 1.4;
+  }
+
+
+
+  
+

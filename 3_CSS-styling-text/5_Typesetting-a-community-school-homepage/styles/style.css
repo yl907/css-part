@@ -1,0 +1,167 @@
+/* General setup */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 1000px;
+  max-width: 1400px;
+}
+
+/* Layout */
+
+section {
+  float: left;
+  width: 50%;
+}
+
+aside {
+  float: left;
+  width: 30%;
+}
+
+nav {
+  float: left;
+  width: 20%;
+}
+
+footer {
+  clear: both;
+}
+
+header, section, aside, nav, footer {
+  padding: 20px;
+}
+
+/* header and footer */
+
+header, footer {
+  border-top: 5px solid #a66;
+  border-bottom: 5px solid #a66;
+}
+
+/* WRITE YOUR CODE BELOW HERE */
+
+/* first, some font file */
+@font-face {
+  font-family: "quicksand";
+  src: url(../fonts/quicksand-regular-webfont.woff);
+}
+
+@font-face {
+  font-family: "sourcesanspro";
+  src: url(../fonts/sourcesanspro-regular-webfont.woff);
+}
+
+html {
+  font-family: "sourcesanspro", serif;
+}
+
+h1, h2, h3 {
+  font-family: "quicksand", sans-serif;
+}
+
+
+/* general text styling */
+html{
+    font-size: 10px;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.6rem;
+}
+
+ul, ol {
+    font-size: 1.6rem;
+}
+
+li {
+    font-size: 1em;
+}
+
+h1 { /* center the top level heading with a "left" property. */
+    width: 400px;
+    text-align: center;
+    position: relative;
+    left: calc(50% - 200px);
+}
+
+h1, h2, h3{
+    letter-spacing: 1px;
+}
+
+p {
+    letter-spacing: 0.4px;
+    word-spacing: 0.8px;
+}
+
+section h2 + p {
+    text-indent: 20px;
+}
+
+/* link */
+a {
+  color: #a66;
+  background-image: url(../images/external-link-52.png);
+  background-size: 0.9em 0.9em;
+  background-position: right 50%;
+  background-repeat: no-repeat;
+  padding-right: 20px;
+}
+
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+a:active {
+  font-weight: bold;
+}
+
+/* list */
+ul,
+ol,
+li {
+  line-height: 1.6em;
+}
+
+ul {
+  /* disc, a thin flat round object */
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+/* navigation bar */
+nav li {
+  border: 2px solid #a66;
+  margin: 2em;
+  padding: 1em;
+  list-style-type: none;
+  text-align: center;
+  font-family: "quicksand", sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+nav a {
+  padding: 0em;
+  background-image: none;
+}
