@@ -1,0 +1,42 @@
+body {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  font:
+    0.9em/1.2 Arial,
+    Helvetica,
+    sans-serif;
+}
+
+/* Let's think about how the float works. The element with the float set on it (the <div> element in this case) is taken out of 
+the normal layout flow of the document and stuck to the left-hand side of its parent container (<body>, in this case).
+Any content that would come below the floated element in the normal layout flow will now wrap around it instead, 
+filling up the space to the right-hand side of it as far up as the top of the floated element. There, it will stop. */
+.box {
+  float: left;
+  margin-right: 15px;
+  /* While we can add a margin to the float to push the text away, we can't add a margin to the text to move it away from the float. 
+  This is because a floated element is taken out of normal flow and the boxes of the following items actually run behind the float. */
+  margin: 15px;
+  width: 150px;
+  height: 100px;
+  border-radius: 5px;
+  background-color: rgb(207, 232, 220);
+  padding: 1em;
+}
+
+.special {
+  background-color: rgb(148, 255, 172);
+  padding: 10px;
+  color: purple;
+}
+
+/* You should see that the second paragraph now clears the floated element and no longer comes up alongside it. The clear property accepts the following values:
+
+left: Clear items floated to the left.
+right: Clear items floated to the right.
+both: Clear any floated items, left or right. */
+.cleared {
+  /* clear 指清空，clear: left指清空左侧(的float元素)。并不是说左侧的float消失了，而是当前具有clear: left的元素将向下进行相对移动，使得其左侧不再与float元素匹配。 */
+  clear: left;
+}

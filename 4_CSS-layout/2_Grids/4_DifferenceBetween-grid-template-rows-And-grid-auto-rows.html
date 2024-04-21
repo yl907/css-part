@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>CSS Grid starting point</title>
+    <style>
+        body {
+            width: 90%;
+            max-width: 900px;
+            margin: 2em auto;
+            font: .9em/1.2 Arial, Helvetica, sans-serif;
+        }
+
+        .container > div {
+            border-radius: 5px;
+            padding: 10px;
+            background-color: rgb(207,232,220);
+            border: 2px solid rgb(79,185,227);
+        }
+
+        /* add your CSS code here */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 1fr;
+            /* !!!!! SEE HERE !!!!! */
+            /* !!!!! SEE HERE !!!!! */
+            /* !!!!! SEE HERE !!!!! */
+            /* auto rows is a automatically generated, which is out of the scope of specified grid layout. */
+            /* the Mozilla document says, 
+            IMPLICIT GRID extends the defined explicit grid when content is placed outside of that grid, such as into the rows by drawing additional grid lines. */
+            grid-auto-rows: 2fr;
+            gap: 10px;
+        }
+
+        /* this is a "grid item", and also a "grid container". */
+        #subgrid {
+            /* as a "grid item" */
+            grid-column: 1 / 4;
+            grid-row: 2 / 4;
+            /* as a grid container */
+            display: grid;
+            gap: inherit;
+            grid-template-columns: subgrid;
+            grid-template-rows: 2fr 1fr;
+        }
+
+    </style>
+  </head>
+
+<body>
+    <div class="container">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four</div>
+        <div id="subgrid">
+          <div>Five</div>
+          <div>Six</div>
+          <div>Seven</div>
+          <div>Eight</div>
+        </div>
+        <div>Nine</div>
+        <div>Ten</div>
+      </div>
+</body>
+
+</html>

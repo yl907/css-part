@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Basic document flow</title>
+
+    <style>
+        /* the position property value other than "static" is making the body to be the "containing block" of the .position element.
+        The .positioned element now sits relative to the <body> element. */
+      body {
+        width: 500px;
+        height: 1400px;
+        margin: 0 auto;
+      }
+
+      p {
+        background: aqua;
+        border: 3px solid blue;
+        padding: 10px;
+        margin: 10px;
+      }
+
+      span {
+        background: red;
+        border: 1px solid black;
+      }
+
+      /* whereas absolute positioning fixes an element in place relative to its nearest positioned ancestor (the initial containing block if there isn't one), 
+      fixed positioning usually fixes an element in place relative to the visible portion of the viewport. */
+
+      /* Now we're going to give the h1 element position: fixed; and have it sit at the top of the viewport. */
+      h1 {
+        position: fixed;
+        top: 0;
+        width: 500px;
+        margin-top: 0;
+        background: white;
+        padding: 10px;
+        border: 1px solid black;
+      }
+
+      /* But notice how some of the content is initially clipped under the heading. 
+      This is because the positioned heading no longer appears in the document flow, so the rest of the content moves up to the top. 
+      We could improve this by moving the paragraphs all down a bit. We can do this by setting some top margin on the first paragraph. */
+      p:nth-of-type(1) {
+        margin-top: 60px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1>Basic document flow</h1>
+
+    <p>I am a basic block level element. My adjacent block level elements sit on new lines below me.</p>
+
+    <p class="positioned">By default we span 100% of the width of our parent element, and our height is as tall as our child content. Our total width and height is our content + padding + border width/height.</p>
+
+    <p>We are separated by our margins. Because of margin collapsing, we are separated by the width of one of our margins, not both.</p>
+
+    <p>inline elements <span>like this one</span> and <span>this one</span> sit on the same line as one another, and adjacent text nodes, if there is space on the same line. Overflowing inline elements <span>wrap onto a new line if possible — like this one containing text</span>, or just go on to a new line if not, much like this image will do: <img src="long.jpg" alt="a wide but short section of a photo of several fabrics"></p>
+
+  </body>
+</html>

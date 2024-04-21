@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>My test page</title>
+    <style>
+/*
+    Falling back from grid to float
+    In the example below, we have floated three <div>s so they display in a row. 
+    Any browser that does not support CSS Grid Layout will see the row of boxes as a floated layout. 
+    A floated item that becomes a grid item loses the float behavior, which means that by turning the wrapper into a Grid Container, the floated items become Grid Items. 
+    If the browser supports Grid Layout it will display the grid view, if not it ignores the display: grid and related properties and the floated layout is used. 
+    
+    Note: The clear property also has no effect once the cleared item becomes a grid item, so you could have a layout with a cleared footer, 
+    which is then turned into a Grid Layout.*/
+        * {
+        box-sizing: border-box;
+        }
+
+        .wrapper {
+        background-color: rgb(79, 185, 227);
+        padding: 10px;
+        max-width: 400px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .item {
+        float: left;
+        border-radius: 5px;
+        background-color: rgb(207, 232, 220);
+        padding: 1em;
+        width: 33.333%;
+        }
+
+        /* one example of "Feature queries" 
+        If we add a feature query to the above example, we can use it to set the widths of our items back to auto 
+        if we know that we have grid support.(since the width is set to 33.333% as a fall back plan.)*/
+        @supports (display: grid) {
+            .item {
+                width: auto;
+            }
+        }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+        <div class="item">Item One</div>
+        <div class="item">Item Two</div>
+        <div class="item">Item Three</div>
+      </div>
+  </body>
+</html>
